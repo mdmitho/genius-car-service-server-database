@@ -30,6 +30,12 @@ async function run(){
       const service =await serviceCollection.findOne(query)
       res.send(service)
     })
+    //Post
+app.post('/service', async(req, res)=>{
+  const newService = req.body
+  const result = await serviceCollection.insertOne(newService)
+  res.send(result)
+})
   }
 
 
